@@ -1,0 +1,59 @@
+
+		
+		#switchingForm  {
+	  background-color: #99ff99;
+	  width: 320px;
+	  height: 440px;
+	  position: absolute;
+	  top: 80px;
+	  right: 20%;
+	 }
+	 
+	legend.switchingForm {
+	  background-color: #4CAF50;
+	  color: white;
+	  padding: 5px 10px;
+	  
+	}
+	fieldset.switchingForm {
+	  font-size:14px;
+	  padding:5px;
+	  width:280px;
+	  line-height:2.5;
+	  
+	  }
+  
+	  .button {
+	  background-color: #008CBA;
+	  border:none;
+	  color: white;
+	  padding: 4px 8px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 14px;
+	  
+	  transition-duration: 0.4s;
+	  cursor: pointer;
+	  border-radius: 12px;
+	  
+	  }
+	  .button:hover {
+	  background-color: #f44336;
+	  color: white;
+		}
+		
+		textarea {
+            font-size:14px;
+            font-weight:500; 
+            text-align:left; 
+            padding:5px;
+            border:2px solid ; 
+            height: 1em;
+			width: 675px;
+			resize: none;
+			
+            }
+	
+		
+

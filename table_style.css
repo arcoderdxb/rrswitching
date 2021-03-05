@@ -1,0 +1,26 @@
+
+		#myTableData {
+		table-layout: auto ;
+		  font-family: Arial,"Times New Roman","Trebuchet MS", Helvetica, sans-serif;
+		  font-size:13px;
+		  border-collapse: collapse;
+		  width: 675px;
+		  }
+		#myTableData td, #myTableData th {
+		  border: 1px solid #ddd;
+		  padding: 15px;
+		}
+
+		#myTableData tr:nth-child(even){background-color: #f2f2f2;}
+
+		#myTableData tr:hover {background-color: #ddd;}
+
+		#myTableData th {
+		  padding-top: 12px;
+		  padding-bottom: 12px;
+		  text-align: center;
+		  background-color: #4CAF50;
+		  color: white;
+		}
+			
+		

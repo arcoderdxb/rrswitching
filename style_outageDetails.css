@@ -1,0 +1,73 @@
+
+	 
+	  #tbl_outageDetails{
+			table-layout: auto ;
+			border: 2px black solid; 
+			border-collapse: collapse;
+			width: 675px;
+            height: 50%;
+			margin-top:120px;
+				
+					}
+		.a { width:120px; }	
+		.e { width:200px; }	
+		.b { width:85px; }
+		.f { width:200px; }	
+		
+		#tbl_outageDetails th {
+			text-align: left;
+            border: solid 1px black; border-collapse: collapse;
+			padding: 2px 2px;
+            font-weight: bold; font-size: 13px;font-family: sans-serif;}
+			
+		#tbl_outageDetails td {
+            border: solid px black; border-collapse: collapse;
+			padding: 3px 3px;
+            font-weight: bold; font-size: 13px;font-family: sans-serif;}	
+			
+			#tbl_operationcheck{
+			table-layout: auto;
+			border: 2px black solid; 
+			border-collapse: collapse;
+			width: 675px;
+            height: 50%;	
+			
+					}
+       	   .i { font-weight:bold; }
+		    .c { width:160px; }
+		   .d { width:50px; }
+			
+		#tbl_operationcheck th, td {
+            border: solid 1px black; border-collapse: collapse;
+			padding: 3px 3px;
+            font-size: 13px;font-family: sans-serif;}
+			
+			
+		#outageDetailsForm  {
+		  background-color: #99ff99;
+		  width: 300px;
+		  height: 470px;
+		  position: absolute;
+		  top: 80px;
+		  right: 27%;
+		  		  
+		  }
+		 
+		 
+		 legend.outageDetailsForm {
+		  background-color: #4CAF50;
+		  color: white;
+		  padding: 5px 10px;
+		}
+		
+		fieldset.outageDetailsForm {
+		  font-size:14px;
+		  padding:5px;
+		  width:280px;
+		  line-height:2.5;
+		  
+		  }
+		  
+		
+
+		

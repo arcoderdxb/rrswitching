@@ -1,0 +1,70 @@
+.page-footer { 
+			position:fixed;
+			bottom:0;
+			right:0px;
+			width:100%;
+			height:30px;
+			background-color:green;
+			z-index:1000;
+			
+			color: white;
+			text-align: center;
+			font-size: 12px;
+			font-family: sans-serif;
+		} 
+		
+	.topnav {
+		overflow: hidden;
+		
+		position: fixed;
+		right:0px;
+		top:40px;
+		width:200px;
+		background-color:#1b1b1b;
+		z-index:1;
+		transition: 0.3s;
+		  
+		}
+
+	.topnav #myLinks {
+	  display: none;
+	  cursor:pointer;
+	  
+	}
+
+	.topnav a {
+	  color: white;
+	  padding: 14px 16px;
+	  text-decoration: none;
+	  font-size: 17px;
+	  display: block;
+	}
+
+	.topnav a.icon {
+	  background: black;
+	  display: block;
+	  position: fixed;
+	  right: 0;
+	  top: 0;
+	}
+
+	.topnav a:hover {
+	  background-color: #ddd;
+	  color: black;
+	  
+	}
+	
+	
+	.active {
+	  background-color: green;
+	  color: white;
+	  text-align: center;
+	  position:fixed;
+	  width:100%;
+	  right: 0;
+	  top: 0;
+	  }		
+	  
+	.topnav a.active {
+	  font-size:20px;
+	}	

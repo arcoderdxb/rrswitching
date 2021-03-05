@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>DFO Automatic Switching Program Test</title> 
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+		<tag> Created by: Raju Chowdhury</tag>
+		<tag> Please don't alter without permission</tag>
+		<tag> Rev5_online version</tag>
+		
+		<link type="text/css" rel="stylesheet" href="printtest.css">
+		<link type="text/css" rel="stylesheet" href="navigation.css">
+		<link type="text/css" rel="stylesheet" href="style_outageDetails.css">
+		<link type="text/css" rel="stylesheet" href="table_style.css">
+		<link type="text/css" rel="stylesheet" href="Switching_form.css">
+	
+
+
+ 
+
+</head>
+	
+
+<body onload="getAndSetVal()">
+
+
+	<div class="page-footer" >Created by:Raju Chowdhury &#169;2021 </div>
+	 
+	<div class="topnav">
+	
+		  <a  class="active">DFO Automatic Switching Program</a>
+		  <div id="myLinks">
+			<a onclick="outageform();">Outage Information</a>
+			<a  onclick="switchingform();">Switching Parameters</a>
+			<a onclick="Javascript:switchingData.printTable()" >Print Switching</a>
+			<a  onclick="fusechart();">Fuse Selection</a>
+			<a  onclick="awareness();">SWGR Operation Awareness</a>
+			
+		  </div>
+		  <a href="javascript:void(0);" class="icon" onclick="opencloseNav()">
+			<i class="fa fa-bars"></i>
+		  </a>
+	</div> 
+	  	  
+ 
+
+	<div id="header"><header>
+	<a ><img src="dewalogo1.jpg" alt="DEWA Logo" class="screen"/></a>
+   </header>
+   </div>
+   
+   
+
+	<div class = "container">
+ 
+	<table class="table" id="tbl_outageDetails">
+	<caption id = "capt" style = "font-size: 20px" "font-family: sans-serif";><b>SAFE Switching Program </b></caption>
+		   
+		
+		<tbody>
+		
+		 <tr> <th class = "a"> Requested By:</th> <td id= "td1" class ="e"> </td> 
+		 <th class = "b"> Type Of Work:</th> <td id= "td2" class ="f" ></td> </tr>
+		 <tr> <th > Description of work:</th> <td id= "td3" colspan = "3"> </tr>
+		 <tr> <th> Date Of Work:</th> <td id= "td4" ></td>
+		 <th> Zone:</th> <td id= "td5" ></td> </tr>
+		 <tr> <th> WP No.:</th> <td id= "td6"> </td>
+		 <th> Shift:</th> <td id= "td7" ></td> </tr>
+		 <tr> <th> Outage No:</th> <td id= "td8" ></td>
+		 <th> Page:</th> <td >......of.........</td></tr>
+		 <tr> <th>TE Page No.:</th> <td id= "td10"></td>
+		 <th> Lock No:</th> <td id= "td11"> </td > </tr>
+				
+		</tbody>
+
+	</table>
+
+
+	<table id="tbl_operationcheck">
+
+		<thead>
+		 <tr><th style = "font-size: 18px";  colspan = "6" >ENSURE OPERATIONAL CHECKS PRIOR TO OPERATION</th></tr>
+		</thead>
+		 <tbody>
+		<div> 	  
+			<tr> 
+			<td class = "c i"> <b>Substation No.</b></td > <td class = "d" id="s1"> </td >  
+			<td class = "d" id="s2"> </td ><td class = "d" id="s3"> </td ><td class = "d" id="s4"> </td ><td class = "d" id="s5"> </td >
+			</tr>
+			<tr><td class = "i">RMU Name/Type</td><td> </td> <td> </td> <td> </td><td> </td> <td> </td> </tr>
+			<tr><td  >Safe Entrance/Exit/Access/Trench</td><td> </td><td> </td><td> </td><td> </td> <td> </td></tr>
+			<tr><td>Substation Condition</td><td> </td><td> </td><td> </td><td> </td> <td> </td></tr>
+			<tr><td>Equipment Earthing Available </td><td> </td><td> </td><td> </td><td> </td> <td> </td></tr>
+			<tr><td>Oil Level, Gas Pressure OK/No oil leakage </td><td> </td><td> </td><td> </td><td> </td> <td> </td></tr>
+			<tr><td>RMU/Switchgear Temperature</td><td> </td><td> </td><td> </td><td> </td> <td> </td></tr>
+			<tr><td>No Audible USD Detected</td><td> </td><td> </td><td> </td><td> </td> <td> </td></tr>
+			<tr><td>TR./LVDB Condition</td><td> </td><td> </td><td> </td><td> </td> <td> </td></tr>
+			<tr><td>Spare Isolator F/S Locked</td> <td> </td><td> </td><td> </td><td> </td> <td> </td></tr>
+			<tr><td>Any other unsafe condition noticed if(Specify)</td><td> </td><td> </td><td> </td> <td> </td> <td> </td></tr>
+		</div>
+		</tbody>
+  
+	</table>
+
+
+	
+	
+	
+	<table class = "table" id ="myTableData">
+		
+				<thead class="report-header">
+					  <tr>
+						<th>SN.</th>
+						<th>Time</th>
+						<th>Substation</th>
+						<th>KV</th>
+						<th>Circuit</th>
+						<th>Equipment</th>
+						<th>Action</th>
+						<th>Remarks</th>
+						</tr>
+				</thead>
+						<tfoot class="report-footer">
+						  <div>
+						  <tr>
+							
+						  </tr>
+						  </div> 
+						</tfoot>	
+			
+	</table>
+			<div class="textArea">
+				<p><textarea id="txt1" rows="1" placeholder="Carried out by" ></textarea></p>
+			</div>	
+	
+				
+	
+</div>
+
+
+
+
+<form id="outageDetailsForm"  name="outageDetailsForm" style="display:none">
+		<fieldset class="outageDetailsForm">
+			<legend class="outageDetailsForm">Outage Details</legend>
+						<label for="dateofWork">Date of Work:</label>
+						<input type="date" name="dateofWork" id="tdateofWork" value="" maxlength = "7">
+						
+						<label for="Requested By">Requested By:</label> 
+						<input type="text" name="requestedBy" id="trequestedBy" value="" maxlength = "16" onkeyup="this.value = this.value.toUpperCase();" >
+							
+						<label for="typeofWork">Type of Work:</label>
+						<input type="text" name="typeofWork" id="ttypeofWork" value="" maxlength = "20">
+						
+						<label for="descriptionofWork">Description of Work:</label><br>
+						<input type="text"  name="descriptionofWork" id="tdescriptionofWork" value="" size="33" maxlength = "70"  ><br>
+						
+						<label for="WPNo">WP No.:</label>
+						<input type="text" name="WPNo" id="tWPNo" value="" maxlength = "30"><br>
+			
+						<label for="outageNo">Outage No:</label>
+						<input type="text" name="outageNo" id="toutageNo" value="" maxlength = "30"><br>
+						
+			<div >
+							<label for="Zone">Zone:</label>
+							<select name="zone" id="selzone" >
+							<option value=""></option>
+							<option value="JALI">JALI</option>
+							<option value="AMIA">AMIA</option>
+							<option value="NAIP">NAIP</option>
+							<option value="IPRK">IPRK</option>
+							<option value="EMAR">EMAR</option>
+							<option value="EMAL">EMAL</option>
+							<option value="JMRV">JMRV</option>
+							<option value="MRNA">MRNA</option>
+							</select>
+					
+			</div>
+			<div>
+				<label for="Shift">Shift:</label>
+				<select id="selShift" name="Shift">
+					<option value=""></option>
+					<option value="M">M</option>
+					<option value="A">A</option>
+					<option value="N">N</option>
+								
+				</select>
+			</div>
+				
+			<label for="TEPageNo">TE Page No:</label>
+			<input type="text" name="TEPageNo" id="tTEPageNo" value="" maxlength= "6"onkeyup="this.value = this.value.toUpperCase();"><br>
+			
+			<label for="lockNo">Lock No:</label>
+			<input type="text" name="lockNo" id="tlockNo" value="" maxlength = "30"onkeyup="this.value = this.value.toUpperCase();">
+			
+			<input type="button" class="button" style ="width:120px" id="add" value="Submit" onclick="Javascript:getAndSetVal()">
+			<input type="button" class="button" style ="width:120px"id="close" value="Close" onclick="Javascript:closeoutageform()">
+			
+			
+		</fieldset>
+	</form>
+
+
+	<form id="switchingForm"  name="switchingForm" style="display:none">
+		<fieldset class="switchingForm">
+			<legend class="switchingForm">Safe Switching</legend>
+			<div class="switchingCont" id="switchingCont">
+				<label  for="switchingEquipment">Equipment : 
+							<select name="switchingEquipment" id="switchingEquipment" onchange="$('.EquipmentCont').hide();$('#'+this.value+'Cont').show()">
+							<option value="none"></option>
+							<option value="Cable">Cable</option>
+							<option value="FirstLegCable">FirstLegCable</option>
+							<option value="RMU">RMU</option>
+							<option value="RMU2RO">RMU2RO</option>
+							<option value="IntroDEWALVDB">IntroDEWALVDB</option>
+							<option value="IntroPVTLVDB">IntroPVTLVDB</option>
+							<option value="Transformer">Transformer</option>
+							</select>
+					</label>
+			</div>
+			<div>
+				<label for="switchingType">Switching Type:</label>
+				<select id="switchingType" name="switchingType">
+					<option value="none"></option>
+					<option value="Energization">Energization</option>
+					<option value="DeEnergization">De-Energization</option>
+				</select>
+			</div>
+			
+			<div class="EquipmentCont" id="TransformerCont"style="display:none">
+					
+				<label for="tSubstation">Substation: 
+				<input type="text" name="tSubstation" id="tSubstation" value="" maxlength=10 size="7" style="font-size: 12px" onkeyup="this.value = this.value.toUpperCase();" ><br>
+				</label>
+					<label for="tTransformer">Transformer: 
+						<input type="text" name="tTransformer" id="tTransformer" value="TR " value="" maxlength= "5" size ="3" style="font-size: 12px" >
+					</label>
+			</div>
+				
+				<div class="EquipmentCont" id="RMUCont"style="display:none" >
+					<div >
+						<label for="RMUSubstation">Substation : </label>
+							<input type="text" name="RMUSubstation" id="RMUSubstation" value="" maxlength=10 size="7" >
+						
+					</div>
+					<div>
+							<label for="RMULHSSS">FarEndSS-1 :</label> 
+							<input type="text" name="RMULHSSS" id="RMULHSSS" value="" maxlength=10 size="7" style="font-size: 12px" onkeyup="this.value = this.value.toUpperCase();" ><br>
+							<label for="RMURHSSS">FarEndSS-2 :</label> 
+							<input type="text" name="RMURHSSS" id="RMURHSSS" value="" maxlength=10 size="7" style="font-size: 12px" onkeyup="this.value = this.value.toUpperCase();"><br>
+							
+					</div>
+					<div >
+						<label>Ring Off1: </label>
+							<input type="text" name="RMURingOff1" id="RMURingOff1" value="" maxlength=10 size="7" style="font-size: 12px" onkeyup="this.value = this.value.toUpperCase();" >
+							<label>towards: </label>
+						<input type="text" name="RMURingOff2" id="RMURingOff2" value="" maxlength=10 size="7" style="font-size: 12px" onkeyup="this.value = this.value.toUpperCase();" >
+					</div>	
+																																																																																																																				
+				</div>
+				
+			<div class="EquipmentCont" id="RMU2ROCont" style="display:none" >
+					<div >
+						<label for="RMU2Substation">Substation : </label>
+							<input type="text" name="RMU2Substation" id="RMU2Substation" value="" maxlength=10 size="7" onkeyup="this.value = this.value.toUpperCase();" >
+						
+					</div>
+					<div>
+							<label for="RMULHSSS">FarEndSS-1 :</label> 
+							<input type="text" name="RMU2LHSSS" id="RMU2LHSSS" value="" maxlength=10 size="7" style="font-size: 12px" onkeyup="this.value = this.value.toUpperCase();" ><br>
+							<label for="RMURHSSS">FarEndSS-2 :</label> 
+							<input type="text" name="RMU2RHSSS" id="RMU2RHSSS" value="" maxlength=10 size="7" style="font-size: 12px" onkeyup="this.value = this.value.toUpperCase();"><br>
+							<label for="RMUSW3">FarEndSS-3 :</label> 
+							<input type="text" name="RMU2SW3" id="RMU2SW3" value="" maxlength=10 size="7" style="font-size: 12px" onkeyup="this.value = this.value.toUpperCase();" >
+					</div>
+					<div >
+						<label>Ring Off1: </label>
+							<input type="text" name="RMU2RingOff1" id="RMU2RingOff1" value="" maxlength=10 size="7" style="font-size: 12px"onkeyup="this.value = this.value.toUpperCase();" >
+							<label>towards: </label>
+						<input type="text" name="RMU2RingOff2" id="RMU2RingOff2" value="" maxlength=10 size="7" style="font-size: 12px" onkeyup="this.value = this.value.toUpperCase();">
+						<label>Ring Off2: </label>
+							<input type="text" name="RMU2RingOff3" id="RMU2RingOff3" value="" maxlength=10 size="7" style="font-size: 12px" onkeyup="this.value = this.value.toUpperCase();">
+							<label>towards: </label>
+						<input type="text" name="RMU2RingOff4" id="RMU2RingOff4" value="" maxlength=10 size="7" style="font-size: 12px"onkeyup="this.value = this.value.toUpperCase();" >
+										
+					</div>	
+				
+				</div>	
+						
+					<div class="EquipmentCont" id="CableCont" >
+					<div >
+						<label for="cableSubstation1">Substation-1 : 
+							<input type="text" name="cableSubstation1" id="cableSubstation1" value="" maxlength=10 size="7" style="font-size: 12px" onkeyup="this.value = this.value.toUpperCase();">
+						</label>
+					</div>
+					<div >
+						<label for="cableSubstation2">Substation-2 :
+						<input type="text" name="cableSubstation2" id="cableSubstation2" value="" maxlength=10 size="7" style="font-size: 12px" onkeyup="this.value = this.value.toUpperCase();">
+						</label>
+					</div>
+					<div >
+						<label>Ring Off-1:<input type="text" name="cableRingOff1" id="cableRingOff1" value="" maxlength=10 size="7" style="font-size: 12px"onkeyup="this.value = this.value.toUpperCase();"></label>
+							
+						<label>towards:<input type="text" name="cableRingOff2" id="cableRingOff2" value="" maxlength=10 size="7" style="font-size: 12px" onkeyup="this.value = this.value.toUpperCase();"></label>
+					</div>				
+										
+						</div>
+				<div class="EquipmentCont" id="FirstLegCableCont" style="display:none" >
+					<div >
+						<label for="BaseStation">Base Station: 
+							<input type="text" name="BaseStation" id="BaseStation" value="" maxlength=15 size="15" style="font-size: 10px" onkeyup="this.value = this.value.toUpperCase();" >
+						</label>
+					</div>
+					<div >
+						<label for="FirstLegSS1">Substation-1 :
+						<input type="text" name="FirstLegSS1" id="FirstLegSS1" value="" maxlength=10 size="7" style="font-size: 12px" onkeyup="this.value = this.value.toUpperCase();" >
+						</label>
+					</div>
+					<div >
+						<label>Ring Off-1:<input type="text" name="baseCableRingOff1" id="baseCableRingOff1" value="" maxlength=10 size="7" style="font-size: 12px" onkeyup="this.value = this.value.toUpperCase();"></label>
+							
+						<label>towards:<input type="text" name="baseCableRingOff2" id="baseCableRingOff2" value="" maxlength=10 size="7" style="font-size: 12px" onkeyup="this.value = this.value.toUpperCase();"></label>
+					</div>				
+										
+				</div>		
+				
+				
+				<div class="EquipmentCont" id="IntroDEWALVDBCont" style="display:none" >
+					<div >
+						<label for="newSubstation">New Substation: 
+							<input type="text" name="newSubstation" id="newSubstation" value="" maxlength=15 size="15" style="font-size: 10px" onkeyup="this.value = this.value.toUpperCase();" >
+						</label>
+					</div>
+					<div>
+							<label for="newSSLHS">FarEndSS-1 :</label> 
+							<input type="text" name="newSSLHS" id="newSSLHS" value="" maxlength=10 size="7" style="font-size: 12px" onkeyup="this.value = this.value.toUpperCase();" ><br>
+							<label for="newSSRHS">FarEndSS-2 :</label> 
+							<input type="text" name="newSSRHS" id="newSSRHS" value="" maxlength=10 size="7" style="font-size: 12px" onkeyup="this.value = this.value.toUpperCase();"><br>
+							
+					</div>
+					<div >
+						<label>Ring Off1: </label>
+							<input type="text" name="newSSRingOff1" id="newSSRingOff1" value="" maxlength=10 size="7" style="font-size: 12px" onkeyup="this.value = this.value.toUpperCase();" >
+							<label>towards: </label>
+						<input type="text" name="newSSRingOff2" id="newSSRingOff2" value="" maxlength=10 size="7" style="font-size: 12px" onkeyup="this.value = this.value.toUpperCase();" >
+					</div>				
+										
+				</div>		
+				
+			<div class="EquipmentCont" id="IntroPVTLVDBCont" style="display:none" >
+					<div >
+						<label for="newPvtsubstation">New Substation: 
+							<input type="text" name="newPvtsubstation" id="newPvtsubstation" value="" maxlength=15 size="15" style="font-size: 10px" onkeyup="this.value = this.value.toUpperCase();" >
+						</label>
+					</div>
+					<div>
+							<label for="newPvtSSLHS">FarEndSS-1 :</label> 
+							<input type="text" name="newPvtSSLHS" id="newPvtSSLHS" value="" maxlength=10 size="7" style="font-size: 12px" onkeyup="this.value = this.value.toUpperCase();" ><br>
+							<label for="newPvtSSRHS">FarEndSS-2 :</label> 
+							<input type="text" name="newPvtSSRHS" id="newPvtSSRHS" value="" maxlength=10 size="7" style="font-size: 12px" onkeyup="this.value = this.value.toUpperCase();"><br>
+							
+					</div>
+					<div >
+						<label>Ring Off1: </label>
+							<input type="text" name="newPvtSSRingOff1" id="newPvtSSRingOff1" value="" maxlength=10 size="7" style="font-size: 12px" onkeyup="this.value = this.value.toUpperCase();" >
+							<label>towards: </label>
+						<input type="text" name="newPvtSSRingOff2" id="newPvtSSRingOff2" value="" maxlength=10 size="7" style="font-size: 12px" onkeyup="this.value = this.value.toUpperCase();" >
+					</div>				
+										
+				</div>			
+				
+				
+				
+				
+				
+				
+				
+				<br><input type="button" class="button" style ="width:140px" id="add" value="Generate Switching" onclick="Javascript:addData()">
+				<input type="button" class="button" style ="width:120px" id="close" value="Close" onclick="Javascript:closeswitchingform()">
+		</fieldset>
+	</form>
+	
+		<script type="text/javascript" src="myscripts.js"></script>
+		<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+
+
+
+
+
+</body>
+</html>
